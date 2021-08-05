@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "Passcat",
+	"version": "0.1.0",
+
+	"description": "Quickly generate strong passwords from keywords.",
+
+	"browser_action": {
+		"default_title": "Passcat",
+		"default_popup": "popup/index.html"
+	},
+
+	"page_action": {
+		"browswer_style": true,
+		"show_matches": ["<all_urls>"]
+	},
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"commands": {
+		"_execute_page_action": {
+			"suggested_key": {
+				"default": "Alt+P"
+			}
+		}
+	}
+}
