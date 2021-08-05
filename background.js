@@ -1,10 +1,21 @@
 browser.pageAction.onClicked.addListener(generatePassword);
 
 async function generatePassword() {
-	navigator.clipboard.readText().then((txt) => console.log(txt));
 	const keyword = await navigator.clipboard.readText();
-	const password = await hashstring(keyword);
+	const hash = await hashstring(keyword);
+	const password = await spiceUp(hash, keyword);
 	navigator.clipboard.writeText(password);
+}
+
+async function spiceUp(hash, keyword) {
+	const settings = JSON.parse(localStorage.getItem("settings"));
+	if (settings && settings.signature && settings.size) {
+		return `${keyword.substr(0, 3)}${settings.signature}${hash.substr(
+			0,
+			settings.size
+		)}${hash.substr(hash.length - settings.size, hash.length)}`;
+	}
+	return hash;
 }
 
 function hashstring(string) {
