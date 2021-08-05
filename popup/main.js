@@ -9,8 +9,6 @@ if (settings && settings.signature && settings.size) {
 	sizeFd.value = settings.size;
 }
 
-// navigator.clipboard.writeText("teste");
-
 const saveBtn = document.querySelector("#save");
 saveBtn.addEventListener("click", () => {
 	status.innerText = "Saving...";
