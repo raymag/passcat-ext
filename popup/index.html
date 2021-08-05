@@ -11,11 +11,11 @@
     <h1>Passcat</h1>
     <div class="input-group">
         <span>Signature:</span>
-        <input type="text" id="signature" required>
+        <input type="text" id="signature" minlength="3" required>
     </div>
     <div class="input-group">
         <span>Size:</span>
-        <input type="number" value="4" id="size" required>
+        <input type="number" value="4" min="1" max="16" id="size" required>
     </div>
 
     <span id="status"></span>

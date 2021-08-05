@@ -12,9 +12,13 @@ if (settings && settings.signature && settings.size) {
 const saveBtn = document.querySelector("#save");
 saveBtn.addEventListener("click", () => {
 	status.innerText = "Saving...";
-	const settings = { size: sizeFd.value, signature: signatureFd.value };
-	localStorage.setItem("settings", JSON.stringify(settings));
-	status.innerText = "Saved";
+	if (sizeFd.value > 0 && sizeFd.value <= 16) {
+		if (signatureFd.value.length >= 3) {
+			const settings = { size: sizeFd.value, signature: signatureFd.value };
+			localStorage.setItem("settings", JSON.stringify(settings));
+			status.innerText = "Saved";
+		}
+	}
 	setTimeout(() => {
 		status.innerText = "";
 	}, 1000);
