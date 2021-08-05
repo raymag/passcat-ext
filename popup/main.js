@@ -18,7 +18,10 @@ saveBtn.addEventListener("click", () => {
 			localStorage.setItem("settings", JSON.stringify(settings));
 			status.innerText = "Saved";
 		}
-	}
+	} else {
+        status.innerText = "Error :c";
+        alert("Incorrect values!");
+    }
 	setTimeout(() => {
 		status.innerText = "";
 	}, 1000);
