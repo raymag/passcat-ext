@@ -8,4 +8,4 @@ In order to quickly generate and recover passwords with Passcat, all you need is
 You can customize the password with a **signature and and a hash size** if you want. All you need to do is to open the extension popup in the browser actions. You can also set another shortcut instead of Alt + P if you want to.
 
 ## Installing
-You can install this extension using the Firefox Addons Website.
+You can install this extension using the [Firefox Addons Website](https://addons.mozilla.org/pt-BR/firefox/addon/passcat/).
